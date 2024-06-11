@@ -1,0 +1,22 @@
+.space {
+    padding: 0 1.6rem;
+    background-color: #8a2f2f;
+}
+
+.headerBox {
+    max-width: 144rem;
+    margin: 0 auto;
+    padding: 1.2rem 0;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff;
+}
+
+@media (min-width: 425px) {
+    .space {
+        padding: 0 2.4rem;
+    }
+}
