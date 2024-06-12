@@ -1,4 +1,4 @@
-import { Card } from './components/card/Card'
+import { FlipCard } from './components/card/FlipCard'
 import { Header } from './components/header/Header'
 import './styles/global.css'
 import styles from './styles/app.module.css'
@@ -97,10 +97,10 @@ export function App() {
           <div className={styles.grid}>
             {cardInfo.map((i, index) => {
                 return (
-                <Card
+                <FlipCard
                 key={index}
-                image={i.path}
-                alt={i.info}
+                path={i.path}
+                info={i.info}
                 text={i.text}/>
               )})
           }
