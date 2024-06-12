@@ -4,6 +4,9 @@
 }
 
 .space {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 3.2rem 1.6rem;
     max-width: 144rem;
     margin: 0 auto;
@@ -16,6 +19,8 @@
     transform: translate(-50%, -50%); */
     display: grid;
     justify-content: center;
+    align-items: center;
+    width: 90%;
     grid-template-columns: repeat(1, 1fr);
     gap: 1.6rem;
 }
@@ -38,6 +43,10 @@
     }
 }
 @media (min-width: 1440px) {
+    .space {
+        height: calc(100vh - 7.4rem);
+        padding: 0;
+    }
     .grid {
         grid-template-columns: repeat(4, 1fr);
     }

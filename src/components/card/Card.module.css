@@ -1,39 +1,48 @@
 .cardBox {
+  position: relative;
   overflow: hidden;
+  background: #ffffff;
+  border-radius: 2rem;
 }
 
-.cardBox:hover .teste {
-  transform: translateY(0);
-  z-index: 1;
-  height: 100px;
-  opacity: 1;
-  padding: 1rem 0;
-}
-
+/* animações */
 .cardBox:hover .card {
   -webkit-animation: flip 0.6s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 	animation: flip 0.6s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
 
+.cardBox:hover .backCard {
+  height: 100%;
+  opacity: 1;
+}
+/**/
+
 .card {
   position: relative;
   cursor: pointer;
+
+  -webkit-animation: flip-reverse 0.6s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+	animation: flip-reverse 0.6s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
 
 .img {
   width: 100%;
+  border-radius: 2rem;
 }
 
-.teste {
-  position: relative;
-  z-index: -1;
-  transform: translateY(-150px);
+.backCard {
+  position: absolute;
+  top: 1.6rem;
+  left: 1.6rem;
+  width: calc(100% - 1.6rem);
+  overflow: hidden;
   height: 0px;
   opacity: 0;
-  transition: .6s;
+  transition: 1s;
 }
 
 
+/*keyframes*/
 @-webkit-keyframes flip {
     0% {
       -webkit-transform: rotateX(0);
@@ -44,12 +53,12 @@
       opacity: .5;
     }
     100% {
-      -webkit-transform: rotateX(-360deg);
-              transform: rotateX(-360deg);
-              opacity: 1;
+      -webkit-transform: rotateX(180deg);
+              transform: rotateX(180deg);
+              opacity: 0;
     }
   }
-  @keyframes flip {
+@keyframes flip {
     0% {
       -webkit-transform: rotateX(0);
               transform: rotateX(0);
@@ -59,11 +68,34 @@
       opacity: .5;
     }
     100% {
-      -webkit-transform: rotateX(-360deg);
-              transform: rotateX(-360deg);
+      -webkit-transform: rotateX(180deg);
+              transform: rotateX(180deg);
+              opacity: 0;
+    }
+  } 
+
+@-webkit-keyframes flip-reverse {
+    0% {
+      -webkit-transform: rotateX(0);
+              transform: rotateX(0);
               opacity: 1;
     }
+    100% {
+      -webkit-transform: rotateX(360deg);
+              transform: rotateX(360deg);
+              opacity: 0;
+    }
   }
-
-  
+@keyframes flip-reverse {
+    0% {
+      -webkit-transform: rotateX(0);
+              transform: rotateX(0);
+              opacity: 0;
+    }
+    100% {
+      -webkit-transform: rotateX(360deg);
+              transform: rotateX(360deg);
+              opacity: 1;
+    }
+  } 
   

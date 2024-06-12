@@ -7,7 +7,7 @@ export function Card({image, alt, text}) {
             <div className={styles.card}>
                 <img className={styles.img} src={image} alt={alt} />
             </div>
-                <p className={styles.teste}>{text}</p>
+                <p className={styles.backCard}>{text}</p>
         </div>
     );
 }
