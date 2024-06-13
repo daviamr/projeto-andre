@@ -22,6 +22,7 @@
   height: 100%;
   backface-visibility: hidden;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   border-radius: 2rem;
@@ -35,6 +36,7 @@
 .flip-card-back {
   background-color: #ffffff;
   transform: rotateX(180deg);
+  justify-content: space-around !important;
 }
 
 .flip-img {
@@ -47,5 +49,28 @@
   text-align: left;
   font-size: 1.6rem;
   padding: 1.6rem;
+  line-height: 1.8rem;
   color: #000000;
+}
+
+.highlight {
+  font-weight: 500;
+}
+
+.card-back-button {
+  width: 60%;
+  padding: .8rem 0;
+  font-size: 1.6rem;
+  background: linear-gradient(180deg, rgba(0,210,10,1) 0%, rgba(0,172,32,1) 100%);
+  border: none;
+  color: #ffffff;
+  border-radius: .8rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  cursor: pointer;
+  transition: .3s;
+  margin-bottom: 1.6rem;
+}
+
+.card-back-button:hover {
+  opacity: .5;
 }

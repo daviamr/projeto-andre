@@ -1,5 +1,7 @@
+import React, { useState } from 'react';
 import { FlipCard } from './components/card/FlipCard'
 import { Header } from './components/header/Header'
+import { CardModal } from './components/card-modal/CardModal'
 import './styles/global.css'
 import styles from './styles/app.module.css'
 import accountcreator from './assets/img/accountcreator.jpg'
@@ -18,76 +20,144 @@ import zapchecker from './assets/img/zapchecker.jpg'
 import zapwarmer from './assets/img/zapwarmer.jpg'
 
 export function App() {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState('');
+  const [modalTitleContent, setModalTitleContent] = useState ('');
+
   const cardInfo = [{
+    title: 'Account Creator',
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam accusamus repellendus quo eligendi sequi quae ullam amet voluptate id doloremque facere aliquid, porro rerum blanditiis ut velit? Ratione, veritatis! Odit?',
+    modalTextContent: '',
     path: accountcreator,
-    info: 'testando'
+    info: 'Logo Account Creator',
+    highlights: ['']
   },
   {
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam accusamus repellendus quo eligendi sequi quae ullam amet voluptate id doloremque facere aliquid, porro rerum blanditiis ut velit? Ratione, veritatis! Odit?',
+    title: 'Check Operadora',
+    text: 'Plataforma que verifica se um número de telefone é válido ou não, se o número é portado e qual é a operadora atual.',
+    modalTextContent: 'Os arquivos com os números para verificação devem ser carregados na plataforma via planilhas (em .XLSX ou .CSV) com até 100.000 linhas. Serviço com capacidade de processar e verificar até 60.000 números por hora.',
+    highlights: ['número de telefone'],
     path: checkoperadora,
-    info: 'testando'
+    info: 'Logo Check Operadora'
   },
-  {
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam accusamus repellendus quo eligendi sequi quae ullam amet voluptate id doloremque facere aliquid, porro rerum blanditiis ut velit? Ratione, veritatis! Odit?',
+  {title: 'Chip Control',
+    text: 'Plataforma para monitoramento e controle de dispositivos chipados, como smartphones e modens.',
+    modalTextContent: 'A plataforma verifica: se o dispositivo está respondendo ou não, se o chip ou dispositivo está com os serviços de mensageria via SMS, WhatsApp e Telegram ativos e se as contas de serviços associados ao cadastro do chip, como GMAIL, Yahoo Mail e MSN Outlook estão desbloqueados. Controla versionamento de softwares e aplicativos, além de fazer a gestão dos créditos e recargas de cada chip.',
     path: chipcontrol,
-    info: 'testando'
+    info: 'Logo Chip Control',
+    highlights: ['dispositivos chipados']
   },
   {
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam accusamus repellendus quo eligendi sequi quae ullam amet voluptate id doloremque facere aliquid, porro rerum blanditiis ut velit? Ratione, veritatis! Odit?',
+    title: 'Mail Checker',
+    text: 'Plataforma para verificação de integridade de listas de e-mails.',
+    modalTextContent: 'A solução verifica: se o domínio associado à conta existe e está ativo, se a TLD é válida, se o endereço de email é válido ou não, se a conta de email está ativa e apta a receber mensagens e permite o disparo de uma mensagem-teste.\n\nCorrige automaticamente erros comuns de digitação e sintaxe. Tem como objetivo reduzir a taxa de bounce de listas de disparo de email e com isso melhorar o score dos respectivos remetentes.\n\nOs arquivos com os endereços de email para verificação devem ser carregados na plataforma via planilhas (em .XLSX ou .CSV) com até 100.000 linhas. Serviço com capacidade de processar e verificar até 120.000 e-mails por hora.',
     path: mailchecker,
-    info: 'testando'
+    info: 'Logo Mail Checker',
+    highlights: ['domínio', 'TLD', 'endereço de email', 'conta de email']
   },
   {
+    title: 'Mail Warmer',
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam accusamus repellendus quo eligendi sequi quae ullam amet voluptate id doloremque facere aliquid, porro rerum blanditiis ut velit? Ratione, veritatis! Odit?',
+    modalTextContent: '',
     path: mailwarmer,
-    info: 'testando'
+    info: 'Logo Mail Warmer',
+    highlights: ['']
   },
   {
+    title: 'Mega base',
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam accusamus repellendus quo eligendi sequi quae ullam amet voluptate id doloremque facere aliquid, porro rerum blanditiis ut velit? Ratione, veritatis! Odit?',
+    modalTextContent: '',
     path: megabase,
-    info: 'testando'
+    info: 'Logo Mega Base',
+    highlights: ['']
   },
   {
+    title: 'Mega Feed',
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam accusamus repellendus quo eligendi sequi quae ullam amet voluptate id doloremque facere aliquid, porro rerum blanditiis ut velit? Ratione, veritatis! Odit?',
+    modalTextContent: '',
     path: megafeed,
-    info: 'testando'
+    info: 'Logo Mega Feed',
+    highlights: ['']
   },
   {
+    title: 'Mega Lead',
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam accusamus repellendus quo eligendi sequi quae ullam amet voluptate id doloremque facere aliquid, porro rerum blanditiis ut velit? Ratione, veritatis! Odit?',
+    modalTextContent: '',
     path: megalead,
-    info: 'testando'
+    info: 'Logo Mega Lead',
+    highlights: ['']
   },
   {
+    title: 'Super Scrapper',
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam accusamus repellendus quo eligendi sequi quae ullam amet voluptate id doloremque facere aliquid, porro rerum blanditiis ut velit? Ratione, veritatis! Odit?',
+    modalTextContent: '',
     path: scrapsender,
-    info: 'testando'
+    info: 'Logo Super Sender',
+    highlights: ['']
   },
   {
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam accusamus repellendus quo eligendi sequi quae ullam amet voluptate id doloremque facere aliquid, porro rerum blanditiis ut velit? Ratione, veritatis! Odit?',
+    modalTextContent: '',
     path: superscrapper,
-    info: 'testando'
+    info: 'Logo Super Scrapper',
+    highlights: ['']
   },
   {
+    title: 'Super Seller',
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam accusamus repellendus quo eligendi sequi quae ullam amet voluptate id doloremque facere aliquid, porro rerum blanditiis ut velit? Ratione, veritatis! Odit?',
+    modalTextContent: '',
     path: superseller,
-    info: 'testando'
+    info: 'Logo Super Seller',
+    highlights: ['']
   },
   {
+    title: 'Super Sender',
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam accusamus repellendus quo eligendi sequi quae ullam amet voluptate id doloremque facere aliquid, porro rerum blanditiis ut velit? Ratione, veritatis! Odit?',
+    modalTextContent: '',
     path: supersender,
-    info: 'testando'
+    info: 'Logo Super Sender',
+    highlights: ['']
   },
   {
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam accusamus repellendus quo eligendi sequi quae ullam amet voluptate id doloremque facere aliquid, porro rerum blanditiis ut velit? Ratione, veritatis! Odit?',
+    title: 'Zap Checker',
+    text: 'Plataforma que verifica se um número de telefone tem uma conta de WhatsApp associada a ele. Em caso positivo, salva as informações disponíveis, de acordo com as configurações de privacidade de cada usuário.',
+    modalTextContent: 'Dados verificados: WhatsApp (Sim ou Não), tipo (Business ou Individual), nome do titular, foto, mensagem de status. Quando a conta verificada for modo "Business", salva também: ramo de atividade, website, email e endereço.\n\nOs arquivos com os números para verificação devem ser carregados na plataforma via planilhas (em .XLSX ou .CSV) com até 100.000 linhas. Serviço com capacidade de processar e verificar até 20.000 números por hora.',
     path: zapchecker,
-    info: 'testando'
+    info: 'Logo Zap Checker',
+    highlights: ['número de telefone']
   },
   {
+    title: 'Zap Warmer',
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam accusamus repellendus quo eligendi sequi quae ullam amet voluptate id doloremque facere aliquid, porro rerum blanditiis ut velit? Ratione, veritatis! Odit?',
+    modalTextContent: '',
     path: zapwarmer,
-    info: 'testando'
+    info: 'Zap Warmer',
+    highlights: ['']
   }];
+
+  const handleOpenModal = (content, titleContent) => {
+    setModalContent(content);
+    setModalTitleContent(titleContent);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setModalContent('');
+    setModalTitleContent('');
+  };
+
+  const formatTextWithLineBreaks = (text) => {
+    return text.split('\n').map((item, key) => {
+      return (
+        <span key={key}>
+          {item}
+          <br />
+        </span>
+      );
+    });
+  };
 
   return (
     <div>
@@ -95,15 +165,23 @@ export function App() {
 
         <div className={styles.space}>
           <div className={styles.grid}>
-            {cardInfo.map((i, index) => {
+            {cardInfo.map((item, index) => {
                 return (
                 <FlipCard
                 key={index}
-                path={i.path}
-                info={i.info}
-                text={i.text}/>
+                path={item.path}
+                info={item.info}
+                text={item.text}
+                highlights={item.highlights}
+                onButtonClick={() => handleOpenModal(cardInfo[index].modalTextContent, cardInfo[index].title)}/>
               )})
           }
+          <CardModal
+              isOpen={isModalOpen}
+              onClose={handleCloseModal}
+              modalTitle={modalTitleContent}
+              content={formatTextWithLineBreaks(modalContent)}>
+              </CardModal>
         </div>
       </div>
     </div>
