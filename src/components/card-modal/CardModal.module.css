@@ -34,6 +34,13 @@
 
 .content {
     line-height: 1.8rem;
+    margin-bottom: 1.6rem;
+}
+
+.anchor {
+    color: rgb(62, 1, 90);
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 @media (min-width: 425px) {
