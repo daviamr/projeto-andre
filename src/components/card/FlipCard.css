@@ -58,7 +58,7 @@
 }
 
 .card-back-button {
-  width: 60%;
+  width: 40%;
   padding: .8rem 0;
   font-size: 1.6rem;
   background: linear-gradient(180deg, rgba(0,210,10,1) 0%, rgba(0,172,32,1) 100%);
@@ -68,9 +68,18 @@
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   cursor: pointer;
   transition: .3s;
+  text-decoration: none;
   margin-bottom: 1.6rem;
 }
 
 .card-back-button:hover {
   opacity: .5;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 1.6rem;
 }

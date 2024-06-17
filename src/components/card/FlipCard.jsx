@@ -12,7 +12,7 @@ const highlightText = (text, highlights) => {
   return highlightedText;
 };
 
-export const FlipCard = ({ text, path, info, highlights, onButtonClick }) => {
+export const FlipCard = ({ text, path, info, highlights, anchor, onButtonClick }) => {
   const [flipped, setFlipped] = useState(false);
   const cardInnerRef = useRef(null);
   const imgRef = useRef(null);
@@ -56,7 +56,10 @@ export const FlipCard = ({ text, path, info, highlights, onButtonClick }) => {
         </div>
         <div className="flip-card-back">
           <h2 className="flip-text" dangerouslySetInnerHTML={{ __html: highlightText(text, highlights) }}></h2>
+          <div className='container'>
           <button className="card-back-button" onClick={onButtonClick}>Saiba mais</button>
+          <a className='card-back-button' href={anchor} target='_blank'>Link</a>
+          </div>
         </div>
       </div>
     </div>

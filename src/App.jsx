@@ -31,7 +31,7 @@ export function App() {
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam accusamus repellendus quo eligendi sequi quae ullam amet voluptate id doloremque facere aliquid, porro rerum blanditiis ut velit? Ratione, veritatis! Odit?',
     modalTextContent: '',
     path: accountcreator,
-    anchor: '#',
+    anchor: 'https://youtube.com',
     info: 'Logo Account Creator',
     highlights: ['']
   },
@@ -190,6 +190,7 @@ export function App() {
                 info={item.info}
                 text={item.text}
                 highlights={item.highlights}
+                anchor={item.anchor}
                 onButtonClick={() => handleOpenModal(cardInfo[index].modalTextContent, cardInfo[index].title, cardInfo[index].anchor)}/>
               )})
           }
