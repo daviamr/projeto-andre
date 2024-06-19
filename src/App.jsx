@@ -28,12 +28,12 @@ export function App() {
 
   const cardInfo = [{
     title: 'Account Creator',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam accusamus repellendus quo eligendi sequi quae ullam amet voluptate id doloremque facere aliquid, porro rerum blanditiis ut velit? Ratione, veritatis! Odit?',
-    modalTextContent: '',
+    text: 'Plataforma para cadastro e criação maciça de contas de email e em Redes Sociais.',
+    modalTextContent: 'Serviço disponível para criação de contas em mais de 30 serviços de email gratuito (Outlook, Yahoo, Gmail, Yandex, Mail.com, AOL, BOL, etc) e nas principais redes sociais (Facebook, Instagram, X, LinkedIn, etc).',
     path: accountcreator,
     anchor: 'https://youtube.com',
     info: 'Logo Account Creator',
-    highlights: ['']
+    highlights: ['contas de email', 'Redes Sociais']
   },
   {
     title: 'Check Operadora',
@@ -59,7 +59,7 @@ export function App() {
     path: mailchecker,
     anchor: '#',
     info: 'Logo Mail Checker',
-    highlights: ['domínio', 'TLD', 'endereço de email', 'conta de email']
+    highlights: ['verificação de integridade']
   },
   {
     title: 'Mail Warmer',
@@ -98,21 +98,22 @@ export function App() {
     highlights: ['']
   },
   {
-    title: 'Super Scrapper',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam accusamus repellendus quo eligendi sequi quae ullam amet voluptate id doloremque facere aliquid, porro rerum blanditiis ut velit? Ratione, veritatis! Odit?',
-    modalTextContent: '',
+    title: 'Scrap Sender',
+    text: ' Plataforma para envio maciço de mensagens privadas para usuários de plataformas, fóruns e Market Places web-based.',
+    modalTextContent: 'O funcionamento é simples. Basta definir um critério de busca e filtragem no site de classificados ou fórum desejado, copiar a URL com o resultado dessa busca e colar essa URL no ScrapSender. Em seguida, escreva a mensagem que você gostaria de enviar para os usuários ou anunciantes do site de destino e o endereço de email onde você quer receber as respostas e pronto! Capacidade de envio de até 30.000 mensagens por hora.',
     path: scrapsender,
     anchor: '#',
     info: 'Logo Super Sender',
-    highlights: ['']
+    highlights: ['fóruns', 'Market Places web-based']
   },
   {
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam accusamus repellendus quo eligendi sequi quae ullam amet voluptate id doloremque facere aliquid, porro rerum blanditiis ut velit? Ratione, veritatis! Odit?',
-    modalTextContent: '',
+    title: 'Super Scrapper',
+    text: 'Plataforma para extração de dados de sites, portais e plataformas web.',
+    modalTextContent: 'Pode ser adaptado para extração de dados em praticamente qualquer plataforma acessível via protocolo http ou https. O funcionamento é muito simples. Basta definir um critério de busca e filtragem no site desejado, copiar a URL com o resultado dessa busca e colar essa URL no SuperScraper. Em alguns segundos todos os dados da busca selecionada serão exportados para uma planilha em formato .XLSX',
     path: superscrapper,
     anchor: '#',
     info: 'Logo Super Scrapper',
-    highlights: ['']
+    highlights: ['sites', 'portais', 'plataformas web']
   },
   {
     title: 'Super Seller',
@@ -125,12 +126,12 @@ export function App() {
   },
   {
     title: 'Super Sender',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam accusamus repellendus quo eligendi sequi quae ullam amet voluptate id doloremque facere aliquid, porro rerum blanditiis ut velit? Ratione, veritatis! Odit?',
-    modalTextContent: '',
+    text: 'Plataforma para disparo maciço de mensagens multimídia via SMS, Flash SMS, MMS, WhatsApp, Telegram e email.',
+    modalTextContent: 'Funcionamento simples e intuitivo. Disparos agendados e programados via planilha em formato .XLSX. Relatórios podem ser gerados e visualizados na própria plataforma ou exportados em .XLSX, .CSV ou .TXT.\n\nCapacidade de envio/dia:\n\n• 1.200.000 SMS/Flash SMS\n\n• 200.000 MMS\n\n• 1.000.000 de e-mails\n\n• 2.400.000 mensagens de WhatsApp\n\n• 600.000 mensagens de Telegram',
     path: supersender,
     anchor: '#',
     info: 'Logo Super Sender',
-    highlights: ['']
+    highlights: ['SMS', 'Flash SMS', 'MMS', 'WhatsApp', 'Telegram', 'email']
   },
   {
     title: 'Zap Checker',
@@ -143,8 +144,8 @@ export function App() {
   },
   {
     title: 'Zap Warmer',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam accusamus repellendus quo eligendi sequi quae ullam amet voluptate id doloremque facere aliquid, porro rerum blanditiis ut velit? Ratione, veritatis! Odit?',
-    modalTextContent: '',
+    text: 'Plataforma para aquecimento e preparação de contas de WhatsApp para envio maciço de mensagens.',
+    modalTextContent: 'Evita os bloqueios de contas por parte dos algoritmos de proteção AntiSpam da Meta. Capacidade de aquecer até 300 contas whatsapp simultaneamente, para envio de até 86.400 mensagens/dia por conta modo Businesse e 43.200 no modo Personal.',
     path: zapwarmer,
     anchor: '#',
     info: 'Zap Warmer',
